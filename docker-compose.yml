@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  gen-ai-gateway:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONPATH=/app
+    volumes:
+      - ./gen_ai_gateway:/app/gen_ai_gateway
+      - ./ppt_wrapper:/app/ppt_wrapper
+    command: ["uvicorn", "gen_ai_gateway.apps.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
+    
+  # Optional: Add a database service if needed in the future
+  # postgres:
+  #   image: postgres:15
+  #   environment:
+  #     POSTGRES_DB: gen_ai_gateway
+  #     POSTGRES_USER: postgres
+  #     POSTGRES_PASSWORD: postgres
+  #   ports:
+  #     - "5432:5432"
+  #   volumes:
+  #     - postgres_data:/var/lib/postgresql/data
+
+# volumes:
+#   postgres_data:
