@@ -1,2 +1,2 @@
 # gen-ai-gateway
-wrapper got Gen AI Gateway
+Wrapper for Gen AI Gateway
