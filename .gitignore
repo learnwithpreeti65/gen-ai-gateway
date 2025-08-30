@@ -106,6 +106,7 @@ celerybeat.pid
 .venv
 env/
 venv/
+venvgateway/
 ENV/
 env.bak/
 venv.bak/
@@ -136,3 +137,6 @@ dmypy.json
 
 # macOS
 .DS_Store
+
+# Git credentials (security)
+.git-credentials
